@@ -21,3 +21,4 @@ C:\Users\laisl\source\repos\TesteExactSales\TesteExactSales\obj\Debug\netcoreapp
 C:\Users\laisl\source\repos\TesteExactSales\TesteExactSales\obj\Debug\netcoreapp3.1\TesteExactSales.dll
 C:\Users\laisl\source\repos\TesteExactSales\TesteExactSales\obj\Debug\netcoreapp3.1\TesteExactSales.pdb
 C:\Users\laisl\source\repos\TesteExactSales\TesteExactSales\obj\Debug\netcoreapp3.1\TesteExactSales.genruntimeconfig.cache
+C:\Users\laisl\source\repos\TesteExactSales\TesteExactSales\obj\Debug\netcoreapp3.1\TesteExactSales.Properties.Resources.resources

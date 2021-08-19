@@ -21,28 +21,17 @@ namespace TesteExactSales
        
         private void Form1_Shown(object sender, EventArgs e)
         {
-              string connetionString;
-            SqlConnection cnn;
-            connetionString = @"Data Source=exactdev.database.windows.net;Initial Catalog=TesteTecnicoDEV;User ID=exactsales;Password=ug2nUyrEq40UYO4eWbRH";
-            cnn = new SqlConnection(connetionString);
+            string connetionString = @"Data Source=exactdev.database.windows.net;Initial Catalog=TesteTecnicoDEV;User ID=exactsales;Password=ug2nUyrEq40UYO4eWbRH"; ;
+            SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
             
+            string sql = "SELECT dbo.Pessoa.nome Nome, dbo.Pessoa.sexo Sexo, dbo.Cargo.nomecargo Cargo FROM dbo.Pessoa RIGHT JOIN dbo.Cargo ON dbo.Pessoa.idCargo = dbo.Cargo.ID";
 
-            SqlCommand command;
-            SqlDataReader dataReader;
-            String sql, Output = "";
-
-            sql = "SELECT * FROM dbo.Pessoa RIGHT JOIN dbo.Cargo ON dbo.Pessoa.idCargo = dbo.Cargo.ID";
-
-            command = new SqlCommand(sql, cnn);
-
-            dataReader = command.ExecuteReader();
-
-            while (dataReader.Read())
-            {
-                Output = Output + dataReader.GetValue(1) + "\n";
-            }
-            MessageBox.Show(Output);
+            SqlCommand command = new SqlCommand(sql, cnn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable tabela = new DataTable();
+            dataAdapter.Fill(tabela);
+            dataGridView1.DataSource = tabela;
             cnn.Close();
         }
     }
